@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API v2 | Sage Mist Interface</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f7f9f7; /* Soft sage-white */
+            background-image: radial-gradient(#e2eee5 1px, transparent 1px);
+            background-size: 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #4a5d4e;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            max-width: 480px;
+            width: 90%;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #b8e0d2; /* Sage accent */
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            letter-spacing: 1px;
+            color: #6a8e7f;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e0eadd;
+            border-radius: 8px;
+            outline: none;
+            box-sizing: border-box;
+            background: #ffffff;
+            font-family: inherit;
+            transition: border 0.3s;
+        }
+
+        input:focus {
+            border-color: #6a8e7f;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 15px;
+            background: #6a8e7f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #567367;
+        }
+
+        pre {
+            background: #f1f5f2;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: #3e4d42;
+            border-left: 3px solid #b8e0d2;
+            overflow-x: auto;
+        }
+
+        .version-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #eef5f0;
+            color: #6a8e7f;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div style="text-align: center;"><span class="version-badge">Premium API Access</span></div>
+    <h2>Analytics Suite v2</h2>
+    
+    <input id="country" placeholder="Search country (e.g. Canada)">
+    
+    <button onclick="callAPI()">Generate Report</button>
+    
+    <pre id="result">Waiting for data request...</pre>
+</div>
+
+<script>
+function callAPI(){
+    let country = document.getElementById("country").value;
+    const resultBox = document.getElementById("result");
+    
+    fetch(`/api/v2/country-currency-summary/?country=${country}`)
+    .then(response => response.json())
+    .then(data => {
+        resultBox.textContent = JSON.stringify(data, null, 2);
+    })
+    .catch(err => {
+        resultBox.textContent = "// Error processing request";
+    });
+}
+</script>
+
+</body>
+</html>
+
