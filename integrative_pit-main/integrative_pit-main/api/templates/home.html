@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Country Currency API | Welcome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ffafbd;
+            --accent-rose: #ffc3a0;
+            --text-dark: #5d4d4a;
+            --glass: rgba(255, 255, 255, 0.85);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+        }
+
+        .container {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 30px;
+            width: 420px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #d48181;
+        }
+
+        .button {
+            display: block;
+            margin: 12px 0;
+            padding: 14px;
+            background: white;
+            color: #d48181;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            border: 1px solid #ffe4e1;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .button:hover {
+            background: #d48181;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(212, 129, 129, 0.2);
+        }
+
+        .footer-note {
+            font-size: 0.8rem;
+            margin-top: 20px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Global Currency</h1>
+        <p style="margin-bottom: 25px;">Select an interface to begin</p>
+        
+        <a class="button" href="/v1-ui/">Version 1 Interface</a>
+        <a class="button" href="/v2-ui/">Version 2 Interface</a>
+        <a class="button" href="/swagger/">Swagger Docs</a>
+        <a class="button" href="/redoc/">ReDoc Docs</a>
+        
+        <div class="footer-note">Designed with elegance & precision</div>
+    </div>
+</body>
+</html>
