@@ -1,88 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html>
-<head>
-
-<title>API Version 1</title>
-
-<style>
-
-body{
-font-family: Arial;
-background:#f4f6f9;
-padding:40px;
-}
-
-.container{
-background:white;
-padding:30px;
-max-width:500px;
-margin:auto;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-input{
-width:100%;
-padding:10px;
-margin-top:10px;
-}
-
-button{
-margin-top:15px;
-padding:10px;
-background:#4facfe;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
-}
-
-pre{
-background:#eee;
-padding:15px;
-margin-top:20px;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="container">
-
-<h2>Country Currency API V1</h2>
-
-<input id="country" placeholder="Enter country">
-
-<button onclick="callAPI()">Get Data</button>
-
-<pre id="result"></pre>
-
-</div>
-
-<script>
-
-function callAPI(){
-
-let country=document.getElementById("country").value
-
-fetch(`/api/v1/country-currency-summary/?country=${country}`)
-
-.then(response=>response.json())
-
-.then(data=>{
-document.getElementById("result").textContent=JSON.stringify(data,null,2)
-})
-
-}
-
-</script>
-
-</body>
-</html>
-=======
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -209,5 +125,4 @@ function callAPI(){
 </script>
 
 </body>
-</html
->>>>>>> 4df9b160e3be03cdc7881f05807612c6f03ea808
+</html>
