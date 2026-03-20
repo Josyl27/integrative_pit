@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html>
 <head>
 
@@ -81,3 +82,132 @@ document.getElementById("result").textContent=JSON.stringify(data,null,2)
 
 </body>
 </html>
+=======
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API v1 | Rose Quartz Interface</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff5f6; /* Very pale blush */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #7d6b69;
+        }
+
+        .container {
+            background: white;
+            padding: 45px;
+            max-width: 450px;
+            width: 90%;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 175, 189, 0.2);
+            border: 1px solid #ffe4e6;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #d48181;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        .input-wrapper {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 0.85rem;
+            margin-left: 10px;
+            color: #a38f8d;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 20px;
+            margin-top: 8px;
+            border: 1px solid #f9ebec;
+            border-radius: 50px;
+            outline: none;
+            box-sizing: border-box;
+            background: #fffcfc;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            border-color: #ffafbd;
+            box-shadow: 0 0 10px rgba(255, 175, 189, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 175, 189, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 175, 189, 0.6);
+        }
+
+        pre {
+            background: #fffafb;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 20px;
+            border: 1.5px dashed #ffafbd;
+            font-size: 0.85rem;
+            text-align: left;
+            color: #8a7371;
+            overflow-x: auto;
+            max-height: 250px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Currency v1</h2>
+    <div class="input-wrapper">
+        <label>Enter country name</label>
+        <input id="country" placeholder="e.g. Italy">
+    </div>
+    <button onclick="callAPI()">Fetch Details</button>
+    <pre id="result">{ "status": "waiting for input..." }</pre>
+</div>
+
+<script>
+function callAPI(){
+    let country = document.getElementById("country").value;
+    const resultDisplay = document.getElementById("result");
+    
+    fetch(`/api/v1/country-currency-summary/?country=${country}`)
+    .then(response => response.json())
+    .then(data => {
+        resultDisplay.textContent = JSON.stringify(data, null, 2);
+    })
+    .catch(err => {
+        resultDisplay.textContent = "Error: Could not retrieve data.";
+    });
+}
+</script>
+
+</body>
+</html
+>>>>>>> 4df9b160e3be03cdc7881f05807612c6f03ea808
